@@ -35,7 +35,12 @@ import type { FC } from "react";
 /**
  * @description Свойства "Компонента".
  */
-export interface ComponentProps {}
+export interface ComponentProps {
+  /**
+   * @description Тестовое поле свойства "Компонента".
+   */
+  test: unknown;
+}
 
 /**
  * @description Компонент.
