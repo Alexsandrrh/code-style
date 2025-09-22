@@ -1,5 +1,26 @@
 # Code Style
 
+## Именование файлов и папок
+
+- Все директории и файлы именуйте в `kebab-case`, чтобы соблюдать единый стиль (`my-component`, `my-component/button.tsx`).
+- Не используйте файлы `index.tsx` или `index.jsx` для компонентов — делайте явные имена; исключение допускается только для роутинга.
+- Исключения допускаются лишь для файлов, предписанных внешними инструментами или стандартами (например, `package.json`).
+
+Пример структуры:
+
+```text
+src/
+├── components/
+│   └── user-card/
+│       ├── user-card.tsx
+│       ├── user-card.module.css
+│       └── user-card.test.tsx
+└── pages/
+    └── dashboard/
+        ├── index.tsx
+        └── dashboard.tsx
+```
+
 ## Как писать React-компонент
 
 - Описывайте публичный контракт компонента через `interface` с префиксом `Props`, чтобы типизация была очевидна.
@@ -13,15 +34,13 @@ import type { FC } from "react";
 
 /**
  * @description Свойства "Компонента".
- * */
+ */
 export interface ComponentProps {}
 
 /**
  * @description Компонент.
- * */
-export const Component: FC<ComponentProps> = () => {
-  return null;
-};
+ */
+export const Component: FC<ComponentProps> = () => null;
 
 Component.displayName = "Component";
 ```
