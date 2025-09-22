@@ -7,16 +7,26 @@
 **Основные правила**
 - Названия директорий и файлов записывайте в `kebab-case`: `my-component`, `my-component/button.tsx`.
 - Не используйте `index.tsx` или `index.jsx` для компонентов; делайте явные имена. Единственное исключение — файлы, обслуживающие роутинг.
+- Для единого места экспортов создавайте `index.ts` на уровне директории.
+- Если у компонента есть дочерние компоненты или хуки, выносите их в подпапки `components/` и `hooks/` внутри директории компонента.
 - Соблюдайте требования внешних инструментов: файлы вроде `package.json` или `tsconfig.json` не переименовывайте.
 
 **Пример структуры проекта**
 ```text
 src/
 ├── components/
+│   ├── index.ts
 │   └── user-card/
+│       ├── index.ts
 │       ├── user-card.tsx
 │       ├── user-card.module.css
-│       └── user-card.test.tsx
+│       ├── user-card.test.tsx
+│       ├── hooks/
+│       │   ├── index.ts
+│       │   └── use-user-card.ts
+│       └── components/
+│           ├── index.ts
+│           └── user-card-avatar.tsx
 └── pages/
     └── dashboard/
         ├── index.tsx
